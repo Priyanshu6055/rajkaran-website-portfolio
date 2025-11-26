@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajkaran Kumar | Animated Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="antialiased">
+    <div id="app" class="min-h-screen">
+        <!-- Header - Sticky and Animated -->
+        <header class="sticky top-0 z-50 header-bg border-b border-gray-700/50 shadow-2xl shadow-indigo-900/20 transition-all duration-500">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+                <!-- Logo/Name -->
+                <div class="logo text-2xl font-extrabold text-white tracking-wider transition-colors duration-300 transform hover:scale-105" 
+                     style="color: var(--color-accent);">
+                    Rajkaran Kumar
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav id="desktop-nav" class="hidden md:flex space-x-6 lg:space-x-10 items-center">
+                    <a href="#home" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="home">
+                        <i data-lucide="home" class="w-4 h-4 inline-block mr-1"></i> Home
+                    </a>
+                    <a href="#resume" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="resume">
+                        <i data-lucide="file-text" class="w-4 h-4 inline-block mr-1"></i> Resume
+                    </a>
+                    <a href="#design" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="design">
+                        <i data-lucide="pen-tool" class="w-4 h-4 inline-block mr-1"></i> Design Projects
+                    </a>
+                    <a href="#experience" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="experience">
+                        <i data-lucide="briefcase" class="w-4 h-4 inline-block mr-1"></i> Experience
+                    </a>
+                    <a href="#education" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="education">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 inline-block mr-1"></i> Education
+                    </a>
+                    <a href="#contact" class="nav-link text-gray-400 hover:text-indigo-400 py-2 transition-all duration-300 font-medium tracking-wide" data-view="contact">
+                        <i data-lucide="mail" class="w-4 h-4 inline-block mr-1"></i> Contact
+                    </a>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2 ml-4 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 shadow-md">
+                        <i data-lucide="sun" id="theme-icon-desktop" class="w-5 h-5"></i>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button and Theme Toggle -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 shadow-md">
+                        <i data-lucide="sun" id="theme-icon-mobile" class="w-5 h-5"></i>
+                    </button>
+                    <!-- IMPORTANT: The ID 'menu-icon' is now on the icon element itself for direct access -->
+                    <button id="menu-btn" class="p-2 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors duration-200">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <nav id="mobile-menu" class="hidden md:hidden absolute w-full header-bg border-t border-gray-700/50 p-4 transform transition-all duration-300 ease-in-out">
+                <!-- Links are dynamically added here by JS -->
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- All Views Container -->
+            <div id="content-container">
+
+                <!-- 1. HOME VIEW (Default) -->
+                <section id="home-view" class="view active">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 animate-fadeIn">
+                        Welcome to My Design & Engineering Portfolio
+                    </h1>
+                    <p class="text-xl text-gray-400 light-mode:text-gray-600 mb-8 animate-slideUp delay-100">
+                        Hello! I’m <b class="text-indigo-300 light-mode:text-indigo-700">Rajkaran Kumar</b>, a Mechanical Engineering student passionate about turning concepts into tangible realities.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Text Content -->
+                        <div>
+                            <p class="text-gray-300 light-mode:text-gray-700 mb-4 animate-slideUp delay-200">
+                                I am currently pursuing Mechanical Engineering at Rabindranath Tagore University, specializing in CAD design, robotics, and product development. My technical stack includes hands-on experience in <b class="text-cyan-400 light-mode:text-cyan-700">SolidWorks</b>, drone fabrication, and innovative mechanical projects.
+                            </p>
+                            <p class="text-gray-300 light-mode:text-gray-700 mb-4 animate-slideUp delay-300">
+                                I am a <b class="text-green-400 light-mode:text-green-700">Certified SolidWorks Associate (CSWA)</b> with strong skills in product modeling and prototyping, ensuring my designs are both functional and manufacturable.
+                            </p>
+                            <p class="text-gray-300 light-mode:text-gray-700 mb-8 animate-slideUp delay-400">
+                                I secured 3rd position in the Design category at the <b class="text-indigo-400 light-mode:text-indigo-700">35th CII Workskills Competition</b>, and in 2025, I emerged as a winner in the same category. Currently, I serve as a Lab Trainer at AIC-RNTU Incubation Centre, where I mentor students in CAD tools, prototyping, robotics, and fabrication, fostering the next generation of innovators.
+                            </p>
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105 animate-slideUp delay-500 nav-link" data-view="contact">
+                                <i data-lucide="send" class="w-5 h-5 mr-2"></i> Get In Touch
+                            </a>
+                        </div>
+                        
+                        <!-- Image/Visual -->
+                        <div class="flex justify-center items-start animate-slideUp delay-600">
+                            <!-- Placeholder Image -->
+                            <div class="relative w-full max-w-sm rounded-xl overflow-hidden shadow-2xl border-4 border-indigo-500/50 transform transition-transform duration-500 ease-in-out hover:shadow-indigo-500/50 hover:border-cyan-400">
+                                <img src="./images/my-img.jpg" 
+                                     alt="Rajkaran Kumar Profile" 
+                                     class="w-full h-auto object-cover transition-opacity duration-500"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x500/1e293b/a5f3fc?text=Profile+Image+Not+Found'"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent light-mode:from-gray-300/50"></div>
+                                <span class="absolute bottom-4 left-4 text-sm font-light tracking-widest bg-indigo-500 text-white px-3 py-1 rounded-full shadow-lg">CSWA Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. RESUME VIEW -->
+                <section id="resume-view" class="view hidden">
+                    <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 mb-8">Detailed Resume & Skills</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <!-- Technical Skills -->
+                        <div class="p-6 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 tilt-card">
+                            <h3 class="text-2xl font-semibold text-indigo-400 light-mode:text-indigo-700 mb-4 flex items-center">
+                                <i data-lucide="cpu" class="w-6 h-6 mr-3"></i> Technical Skills
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> SolidWorks <span class="ml-2 text-xs font-bold text-cyan-300 light-mode:text-cyan-600">(CSWA Certified)</span></li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> Fusion 360</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> AutoCAD 2D/3D</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> Inventor (CAD)</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> Drone Fabrication & Testing</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> 3D Printing</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> Arduino, ESP32 (Microcontrollers)</li>
+                                <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 inline text-green-400 mr-2 flex-shrink-0"></i> IoT (Internet of Things) Implementation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Certifications & PDF -->
+                        <div class="space-y-6">
+                            <div class="p-6 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 tilt-card">
+                                <h3 class="text-2xl font-semibold text-indigo-400 light-mode:text-indigo-700 mb-4 flex items-center">
+                                    <i data-lucide="award" class="w-6 h-6 mr-3"></i> Certifications
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="bookmark-check" class="w-4 h-4 inline text-amber-400 mr-2 flex-shrink-0"></i> Certified SolidWorks Associate (CSWA)</li>
+                                    <li class="text-gray-300 light-mode:text-gray-700 flex items-center"><i data-lucide="bookmark-check" class="w-4 h-4 inline text-amber-400 mr-2 flex-shrink-0"></i> Drone Fabrication Certificate</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 bg-indigo-900/30 light-mode:bg-indigo-100/70 rounded-xl shadow-lg border border-indigo-700/50 light-mode:border-indigo-300 text-center transition-all duration-300 transform hover:scale-[1.03]">
+                                <h3 class="text-xl font-semibold text-white light-mode:text-indigo-800 mb-3">Download Full Resume</h3>
+                                <a href="https://drive.google.com/file/d/1QpETDV-PheL_4F-TpaO1sBweSvcaiLFP/view?usp=drive_link" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-full shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                                    <i data-lucide="download" class="w-4 h-4 mr-2"></i> View Resume PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. DESIGN PROJECTS VIEW -->
+                <section id="design-view" class="view hidden">
+                    <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 mb-4">Design Projects Gallery</h2>
+                    <p class="text-xl text-gray-400 light-mode:text-gray-600 mb-8">
+                        Here are some of my CAD designs and mechanical models created in SolidWorks and Fusion 360.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                        <!-- Mockup Cards with tilt and glow effect -->
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="./images/1.png" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                                                <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                                                <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                                                <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                                                <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                                                <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 1" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Mechanical Model 1</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 2" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Fusion 360 Design</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 3" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">SolidWorks Assembly</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 light-mode:border-gray-300 tilt-card">
+                            <img src="" alt="CAD Project 4" class="w-full h-full object-cover aspect-square group-hover:opacity-75 transition-opacity duration-300">
+                            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4 light-mode:from-black/50">
+                                <p class="text-sm font-semibold text-white">Prototyping Model</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 4. EXPERIENCE VIEW -->
+                <section id="experience-view" class="view hidden">
+                    <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 mb-8">Work Experience & Key Projects</h2>
+                    
+                    <div class="space-y-12">
+                        <!-- Job 1: Lab Trainer -->
+                        <div class="relative pl-8 border-l-4 border-indigo-600 group pb-8 hover:border-cyan-400 transition-colors duration-300">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-gray-900 light-mode:ring-gray-100 light-mode:bg-indigo-700 transition-all duration-300 group-hover:bg-cyan-400 group-hover:scale-125"></div>
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">2024 - Present</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">Lab Trainer</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic mb-2">AIC-RNTU Incubation Centre</p>
+                            <p class="text-gray-300 light-mode:text-gray-700">Training students and innovators in advanced CAD tools, 3D printing, robotics, and complex fabrication techniques, fostering practical engineering skills.</p>
+                        </div>
+
+                        <!-- Project: Smart India Hackathon (SIH 2024) -->
+                        <div class="relative pl-8 border-l-4 border-indigo-600 group pb-8 hover:border-cyan-400 transition-colors duration-300">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-gray-900 light-mode:ring-gray-100 light-mode:bg-indigo-700 transition-all duration-300 group-hover:bg-cyan-400 group-hover:scale-125"></div>
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">2024</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">Smart India Hackathon (SIH 2024)</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic mb-2">Developed a hybrid hardware + smart control system for solar energy management.</p>
+                            <p class="text-gray-300 light-mode:text-gray-700">Focused on designing an efficient control mechanism combining mechanical and IoT principles for optimal energy harvesting.</p>
+                        </div>
+                        
+                        <!-- Competition: CII WorkSkill -->
+                        <div class="relative pl-8 border-l-4 border-indigo-600 group pb-8 hover:border-cyan-400 transition-colors duration-300">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-indigo-600 ring-4 ring-gray-900 light-mode:ring-gray-100 light-mode:bg-indigo-700 transition-all duration-300 group-hover:bg-cyan-400 group-hover:scale-125"></div>
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">2023 / 2025</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">CII WorkSkill Competition</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic mb-2">Winner at regional level in Mechanical CAD design using SolidWorks.</p>
+                            <p class="text-gray-300 light-mode:text-gray-700">Achieved significant recognition by demonstrating superior technical proficiency, speed, and creative problem-solving in challenging design scenarios.</p>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- 5. EDUCATION VIEW -->
+                <section id="education-view" class="view hidden">
+                    <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 mb-8">Academic Journey</h2>
+                    <div class="space-y-8">
+                        <!-- B.Tech -->
+                        <div class="relative p-6 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border-l-4 border-indigo-600 transition-all duration-300 hover:border-cyan-400 transform hover:scale-[1.01] tilt-card">
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">2021 - Present (Expected Graduation 2025)</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">B.Tech, Mechanical Engineering</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic">Rabindranath Tagore University, Bhopal</p>
+                            <p class="text-gray-300 light-mode:text-gray-700 mt-2">Focused coursework on Manufacturing, Design Engineering, Thermodynamics, and Robotics.</p>
+                        </div>
+                        <!-- Diploma -->
+                        <div class="relative p-6 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border-l-4 border-indigo-600 transition-all duration-300 hover:border-cyan-400 transform hover:scale-[1.01] tilt-card">
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">Prior to B.Tech</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">Diploma in Mechanical Engineering</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic">Rabindranath Tagore University, Bhopal</p>
+                            <p class="text-gray-300 light-mode:text-gray-700 mt-2">Provided foundational knowledge in core mechanical principles and engineering drawing.</p>
+                        </div>
+                         <!-- Internship -->
+                         <div class="relative p-6 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border-l-4 border-indigo-600 transition-all duration-300 hover:border-cyan-400 transform hover:scale-[1.01] tilt-card">
+                            <p class="text-sm text-gray-400 light-mode:text-gray-500">Internship/Training</p>
+                            <h3 class="text-2xl font-semibold text-white light-mode:text-gray-800 mt-1">Practical Internship</h3>
+                            <p class="text-indigo-300 light-mode:text-indigo-700 italic">AIC-RNTU Incubation Centre</p>
+                            <p class="text-gray-300 light-mode:text-gray-700 mt-2">Hands-on exposure to the startup ecosystem, prototyping tools, and incubation processes.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. CONTACT VIEW -->
+                <section id="contact-view" class="view hidden">
+                    <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 light-mode:from-indigo-700 light-mode:to-cyan-600 mb-8">Let's Connect and Collaborate</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <!-- Contact Information -->
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="p-4 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 flex items-center transition-all duration-300 hover:bg-gray-700/50 hover:shadow-indigo-500/30">
+                                <i data-lucide="mail" class="w-6 h-6 text-indigo-400 light-mode:text-indigo-600 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-400 light-mode:text-gray-500">Email Address</p>
+                                    <a href="mailto:rajkarank332@gmail.com" class="text-lg font-medium text-white light-mode:text-gray-800 hover:text-cyan-400 transition-colors">rajkarank332@gmail.com</a>
+                                </div>
+                            </div>
+                            <!-- Phone -->
+                            <div class="p-4 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 flex items-center transition-all duration-300 hover:bg-gray-700/50 hover:shadow-indigo-500/30">
+                                <i data-lucide="phone" class="w-6 h-6 text-indigo-400 light-mode:text-indigo-600 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-400 light-mode:text-gray-500">Mobile Numbers</p>
+                                    <p class="text-lg font-medium text-white light-mode:text-gray-800">8539000480, 9424612272</p>
+                                </div>
+                            </div>
+                            <!-- LinkedIn -->
+                            <div class="p-4 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 flex items-center transition-all duration-300 hover:bg-gray-700/50 hover:shadow-indigo-500/30">
+                                <i data-lucide="linkedin" class="w-6 h-6 text-indigo-400 light-mode:text-indigo-600 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-400 light-mode:text-gray-500">Professional Network</p>
+                                    <a href="https://www.linkedin.com/in/rajkaran-kumar-b19bb3320" target="_blank" class="text-lg font-medium text-white light-mode:text-gray-800 hover:text-cyan-400 transition-colors flex items-center">
+                                        View LinkedIn Profile 
+                                        <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Location -->
+                            <div class="p-4 bg-gray-800 light-mode:bg-white rounded-xl shadow-lg border border-gray-700 light-mode:border-gray-200 flex items-center transition-all duration-300 hover:bg-gray-700/50 hover:shadow-indigo-500/30">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-indigo-400 light-mode:text-indigo-600 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-400 light-mode:text-gray-500">Location</p>
+                                    <p class="text-lg font-medium text-white light-mode:text-gray-800">Nawada, Bihar, 805112, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="p-8 bg-gray-800 light-mode:bg-white rounded-xl shadow-2xl border border-gray-700 light-mode:border-gray-200 animate-slideUp tilt-card">
+                            <h3 class="text-xl font-bold text-white light-mode:text-gray-800 mb-6">Send Me a Message</h3>
+                            <form id="contact-form" onsubmit="event.preventDefault(); showMessage('Your message has been sent! I will respond as soon as possible.', 'success');">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-sm font-medium text-gray-300 light-mode:text-gray-600 mb-1">Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-700 light-mode:bg-gray-100 border border-gray-600 light-mode:border-gray-300 rounded-lg text-white light-mode:text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="Your Name">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-sm font-medium text-gray-300 light-mode:text-gray-600 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-700 light-mode:bg-gray-100 border border-gray-600 light-mode:border-gray-300 rounded-lg text-white light-mode:text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="your.email@example.com">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="message" class="block text-sm font-medium text-gray-300 light-mode:text-gray-600 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 bg-gray-700 light-mode:bg-gray-100 border border-gray-600 light-mode:border-gray-300 rounded-lg text-white light-mode:text-gray-800 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="What can I design for you?"></textarea>
+                                </div>
+                                <button type="submit" class="w-full flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 shadow-xl shadow-indigo-500/30 transition-all duration-300 transform hover:scale-[1.02]">
+                                    <i data-lucide="send" class="w-5 h-5 mr-2"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Notification Modal -->
+        <div id="notification-modal" class="fixed inset-0 z-[100] bg-black bg-opacity-50 hidden items-center justify-center p-4" onclick="this.classList.add('hidden')">
+            <div class="bg-gray-800 light-mode:bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full transform transition-all duration-300 scale-90" onclick="event.stopPropagation()">
+                <h3 id="notification-title" class="text-xl font-bold mb-2 text-indigo-400 light-mode:text-indigo-700">Success!</h3>
+                <p id="notification-message" class="text-gray-300 light-mode:text-gray-700">Your action was completed successfully.</p>
+                <button onclick="document.getElementById('notification-modal').classList.add('hidden')" class="mt-4 w-full py-2 bg-indigo-600 rounded-lg text-white hover:bg-indigo-700 transition-colors">Close</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 light-mode:bg-gray-100 border-t border-gray-800 light-mode:border-gray-300 py-6 text-center text-gray-500 text-sm mt-12 transition-colors duration-500">
+            © 2025 Rajkaran Kumar | All Rights Reserved
+        </footer>
+    </div>
+
+    <!-- <script>
+        const VIEWS = ['home', 'resume', 'design', 'experience', 'education', 'contact'];
+        const mobileMenu = document.getElementById('mobile-menu');
+        const desktopNav = document.getElementById('desktop-nav');
+        const menuBtn = document.getElementById('menu-btn');
+        const menuIcon = document.getElementById('menu-icon'); // The specific icon element
+        const themeToggleDesktop = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeIconDesktop = document.getElementById('theme-icon-desktop');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+        const body = document.body;
+
+        // --- Theme Management ---
+        function updateThemeIcon(isLightMode) {
+            const iconName = isLightMode ? 'moon' : 'sun';
+            
+            // Set the data-lucide attribute on the icon elements
+            themeIconDesktop.setAttribute('data-lucide', iconName);
+            themeIconMobile.setAttribute('data-lucide', iconName);
+            
+            // Re-render Lucide icons
+            lucide.replace();
+        }
+
+        function toggleDarkMode() {
+            const isLightMode = body.classList.toggle('light-mode');
+            updateThemeIcon(isLightMode);
+            // In a real application, you would save this preference here:
+            // localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+        }
+
+        // Attach theme toggles
+        themeToggleDesktop.addEventListener('click', toggleDarkMode);
+        themeToggleMobile.addEventListener('click', toggleDarkMode);
+
+
+        // --- Notification Modal ---
+        function showMessage(msg, type = 'info') {
+            const modal = document.getElementById('notification-modal');
+            const titleElement = document.getElementById('notification-title');
+            const messageElement = document.getElementById('notification-message');
+            
+            titleElement.textContent = type === 'success' ? 'Success!' : 'Notification';
+            titleElement.className = `text-xl font-bold mb-2 ${type === 'success' ? 'text-green-400 light-mode:text-green-700' : 'text-indigo-400 light-mode:text-indigo-700'}`;
+            messageElement.textContent = msg;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            const modalContent = modal.querySelector('div');
+            setTimeout(() => { modalContent.classList.remove('scale-90'); }, 50);
+
+            if (type === 'success') {
+                setTimeout(() => { modal.classList.add('hidden'); }, 5000);
+            }
+        }
+
+        // --- Navigation Management ---
+        function toggleMobileMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            const iconName = isHidden ? 'x' : 'menu';
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+            
+            // Fix: Target the menuIcon element directly and update its data-lucide attribute
+            menuIcon.setAttribute('data-lucide', iconName);
+            lucide.replace(); // Re-render the icon
+        }
+
+        function showView(viewName) {
+            const finalView = VIEWS.includes(viewName) ? viewName : 'home';
+            
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+                view.classList.add('hidden');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const targetView = document.getElementById(`${finalView}-view`);
+            // Find both desktop and mobile links
+            const targetLinks = document.querySelectorAll(`.nav-link[data-view="${finalView}"]`);
+
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                setTimeout(() => { targetView.classList.add('active'); }, 50);
+            }
+
+            targetLinks.forEach(link => {
+                link.classList.add('active');
+            });
+            
+            if (!mobileMenu.classList.contains('hidden')) {
+                // Automatically close mobile menu after clicking a link
+                toggleMobileMenu();
+            }
+
+            if (window.location.hash !== `#${finalView}`) {
+                history.pushState(null, '', `#${finalView}`);
+            }
+        }
+
+        function setupMobileMenu() {
+            // Get the HTML content of the desktop links
+            const linksHtml = Array.from(desktopNav.querySelectorAll('.nav-link')).map(link => {
+                // Get the text content, including the icon
+                const linkContent = link.innerHTML.trim();
+                const viewName = link.getAttribute('data-view');
+                const href = link.getAttribute('href');
+                
+                // Use a different style for mobile links
+                return `<a href="${href}" class="nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 light-mode:text-gray-700 hover:bg-gray-800 light-mode:hover:bg-gray-200 hover:text-indigo-400 transition-colors duration-200" data-view="${viewName}">${linkContent}</a>`;
+            }).join('');
+            
+            mobileMenu.innerHTML = linksHtml;
+
+            // Reattach event listeners to ALL nav links (including the newly created mobile ones)
+            document.querySelectorAll('.nav-link').forEach(link => {
+                // Remove existing listener to prevent duplicates
+                link.removeEventListener('click', handleNavLinkClick); 
+                link.addEventListener('click', handleNavLinkClick);
+            });
+            
+            // Re-render lucide icons in the newly created mobile menu
+            lucide.replace();
+        }
+        
+        function handleNavLinkClick(e) {
+            e.preventDefault();
+            const viewName = e.currentTarget.getAttribute('data-view');
+            showView(viewName);
+        }
+
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+
+        window.addEventListener('hashchange', () => {
+            const viewName = window.location.hash.substring(1);
+            showView(viewName);
+        });
+
+        // Initial setup on load
+        window.onload = () => {
+            // 1. Initialize Lucide icons
+            lucide.createIcons();
+            
+            // 2. Set up mobile menu (needs lucide icons to be ready first)
+            setupMobileMenu(); 
+            
+            // 3. Set up initial theme (defaults to dark, icon set to sun)
+            // Note: The icons are already initialized in the HTML with their initial states, but we call the update function just in case.
+            const isLightMode = body.classList.contains('light-mode');
+            updateThemeIcon(isLightMode); 
+
+            // 4. Show the correct view based on hash
+            const initialView = window.location.hash.substring(1) || 'home';
+            showView(initialView);
+        };
+    </script> -->
+
+<script>
+    const VIEWS = ['home', 'resume', 'design', 'experience', 'education', 'contact'];
+    const mobileMenu = document.getElementById('mobile-menu');
+    const desktopNav = document.getElementById('desktop-nav');
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const themeToggleDesktop = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const body = document.body;
+
+    // --- Utility Functions ---
+
+    function updateThemeIcon(isLightMode) {
+        const iconName = isLightMode ? 'moon' : 'sun';
+        // Select all theme icons to ensure both desktop and mobile are updated
+        document.querySelectorAll('[id^="theme-icon"]').forEach(icon => {
+            icon.setAttribute('data-lucide', iconName);
+        });
+        // FIX: Changed lucide.replace() to lucide.createIcons()
+        lucide.createIcons();
+    }
+
+    function toggleDarkMode() {
+        const isLightMode = body.classList.toggle('light-mode');
+        updateThemeIcon(isLightMode);
+        localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    }
+
+    function toggleMobileMenu() {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        const iconName = isHidden ? 'menu' : 'x';
+        
+        menuIcon.setAttribute('data-lucide', iconName);
+        // FIX: Changed lucide.replace() to lucide.createIcons()
+        lucide.createIcons();
+    }
+    
+    // --- Notification Modal (Original code kept) ---
+    function showMessage(msg, type = 'info') {
+        const modal = document.getElementById('notification-modal');
+        const titleElement = document.getElementById('notification-title');
+        const messageElement = document.getElementById('notification-message');
+        
+        titleElement.textContent = type === 'success' ? 'Success!' : 'Notification';
+        titleElement.className = `text-xl font-bold mb-2 ${type === 'success' ? 'text-green-400 light-mode:text-green-700' : 'text-indigo-400 light-mode:text-indigo-700'}`;
+        messageElement.textContent = msg;
+
+        // NOTE: The modal elements are missing in the provided HTML context, but the function logic is preserved.
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            const modalContent = modal.querySelector('div');
+            setTimeout(() => { 
+                if (modalContent) modalContent.classList.remove('scale-90'); 
+            }, 50);
+
+            if (type === 'success') {
+                setTimeout(() => { modal.classList.add('hidden'); }, 5000);
+            }
+        }
+    }
+
+
+    function showView(viewName) {
+        const finalView = VIEWS.includes(viewName) ? viewName : 'home';
+        
+        document.querySelectorAll('.view').forEach(view => {
+            view.classList.remove('active');
+            view.classList.add('hidden');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        const targetView = document.getElementById(`${finalView}-view`);
+        const targetLinks = document.querySelectorAll(`.nav-link[data-view="${finalView}"]`);
+
+        if (targetView) {
+            targetView.classList.remove('hidden');
+            setTimeout(() => { targetView.classList.add('active'); }, 50);
+        }
+
+        targetLinks.forEach(link => {
+            link.classList.add('active');
+        });
+        
+        if (!mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+        }
+
+        if (window.location.hash !== `#${finalView}`) {
+            history.pushState(null, '', `#${finalView}`);
+        }
+    }
+
+    function handleNavLinkClick(e) {
+        e.preventDefault();
+        const viewName = e.currentTarget.getAttribute('data-view');
+        showView(viewName);
+    }
+
+    function setupMobileMenu() {
+        const linksHtml = Array.from(desktopNav.querySelectorAll('.nav-link')).map(link => {
+            const linkContent = link.innerHTML.trim();
+            const viewName = link.getAttribute('data-view');
+            const href = link.getAttribute('href');
+            
+            return `<a href="${href}" class="nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 light-mode:text-gray-700 hover:bg-gray-800 light-mode:hover:bg-gray-200 hover:text-indigo-400 transition-colors duration-200" data-view="${viewName}">${linkContent}</a>`;
+        }).join('');
+        
+        mobileMenu.innerHTML = linksHtml;
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.removeEventListener('click', handleNavLinkClick); 
+            link.addEventListener('click', handleNavLinkClick);
+        });
+        
+        // FIX: Changed lucide.replace() to lucide.createIcons()
+        lucide.createIcons();
+    }
+    
+    // --- Event Listeners and Initializers ---
+
+    themeToggleDesktop.addEventListener('click', toggleDarkMode);
+    themeToggleMobile.addEventListener('click', toggleDarkMode);
+    menuBtn.addEventListener('click', toggleMobileMenu);
+
+    window.addEventListener('hashchange', () => {
+        const viewName = window.location.hash.substring(1);
+        showView(viewName);
+    });
+    
+    window.addEventListener('popstate', () => {
+        const viewName = window.location.hash.substring(1) || 'home';
+        showView(viewName);
+    });
+
+    // Initial setup on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Initialize Lucide icons
+        lucide.createIcons();
+        
+        // 2. Load theme preference (Added localStorage logic)
+        const savedTheme = localStorage.getItem('theme');
+        let isLightMode = false;
+        
+        if (savedTheme) {
+            isLightMode = savedTheme === 'light';
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            isLightMode = true;
+        }
+
+        if (isLightMode) {
+            body.classList.add('light-mode');
+        }
+        updateThemeIcon(isLightMode); 
+        
+        // 3. Set up mobile menu
+        setupMobileMenu(); 
+        
+        // 4. Show the correct view
+        const initialView = window.location.hash.substring(1) || 'home';
+        showView(initialView);
+    });
+</script>
+</body>
+</html>
